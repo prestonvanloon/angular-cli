@@ -50,8 +50,8 @@ ng help
 ### Generating and serving an Angular project via a development server
 
 ```bash
-ng new PROJECT_NAME
-cd PROJECT_NAME
+ng new PROJECT-NAME
+cd PROJECT-NAME
 ng serve
 ```
 Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
@@ -116,6 +116,8 @@ rm -rf node_modules dist # use rmdir /S/Q node_modules dist in Windows Command P
 npm install --save-dev @angular/cli@latest
 npm install
 ```
+
+If you are updating to 1.0 from a beta or RC version, check out our [1.0 Update Guide](https://github.com/angular/angular-cli/wiki/stories-1.0-update).
 
 You can find more details about changes between versions in [CHANGELOG.md](https://github.com/angular/angular-cli/blob/master/CHANGELOG.md).
 

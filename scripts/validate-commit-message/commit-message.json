@@ -1,15 +1,15 @@
 {
   "maxLength": 100,
-  "types": [
-    "build",
-    "ci",
-    "docs",
-    "feat",
-    "fix",
-    "perf",
-    "refactor",
-    "style",
-    "test",
-    "tool"
-  ]
+  "types": {
+    "build": "",
+    "ci": "",
+    "docs": "",
+    "feat": "",
+    "fix": "",
+    "perf": "",
+    "refactor": "",
+    "style": "",
+    "test": "",
+    "tool": ""
+  }
 }

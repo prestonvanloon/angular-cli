@@ -32,16 +32,15 @@ module.exports = function(commitSubject) {
 
   const match = PATTERN.exec(commitSubject);
   if (!match || match[2] === 'revert') {
-    error(
-        'The commit message does not match the format of "<type>(<scope>): <subject> OR revert: type(<scope>): <subject>"',
-        commitSubject);
+    error('The commit message does not match the format of "<type>(<scope>): <subject> '
+        + 'OR revert: type(<scope>): <subject>"', commitSubject);
     return false;
   }
 
   const type = match[2];
-  if (config['types'].indexOf(type) === -1) {
-    error(
-        `${type} is not an allowed type.\n => TYPES: ${config['types'].join(', ')}`, commitSubject);
+  const types = Object.keys(config['types']);
+  if (types.indexOf(type) === -1) {
+    error(`"${type}" is not an allowed type.\n => TYPES: "${types.join('", "')}"`, commitSubject);
     return false;
   }
 
@@ -49,8 +48,7 @@ module.exports = function(commitSubject) {
   const allScopes = Object.keys(packages).concat(Object.keys(tools));
 
   if (scope && !allScopes.includes(scope)) {
-    error(
-        `"${scope}" is not an allowed scope.\n => SCOPES: ${config['scopes'].join(', ')}`,
+    error(`"${scope}" is not an allowed scope.\n => SCOPES: ${allScopes.join(', ')}`,
         commitSubject);
     return false;
   }

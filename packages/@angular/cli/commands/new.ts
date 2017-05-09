@@ -39,7 +39,8 @@ const NewCommand = Command.extend({
       type: Boolean,
       default: false,
       aliases: ['lc'],
-      description: 'Automatically link the `@angular/cli` package.'
+      description: 'Automatically link the `@angular/cli` package.',
+      hidden: true
     },
     {
       name: 'skip-install',
@@ -61,13 +62,6 @@ const NewCommand = Command.extend({
       default: false,
       aliases: ['st'],
       description: 'Skip creating spec files.'
-    },
-    {
-      name: 'skip-e2e',
-      type: Boolean,
-      default: false,
-      aliases: ['s2'],
-      description: 'Skip creating e2e files.'
     },
     {
       name: 'skip-commit',
